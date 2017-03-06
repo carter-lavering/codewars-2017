@@ -1,3 +1,5 @@
+# made by Luke
+# yes, I know, I was out of time and didn't have time to code properly
 L = [1,2,3,4,5,6]
 F = [0,1,1,2,3,5]
 T = [0,0,1,1,2,4]
