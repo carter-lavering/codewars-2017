@@ -1,3 +1,4 @@
+# made by Carter
 def mass_input():
     i = [input()]
     while i[-1] != '0 0':
