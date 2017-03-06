@@ -1,3 +1,4 @@
+# made by Josh
 def magic():
     datainput = input()
     x,y = datainput.split()
