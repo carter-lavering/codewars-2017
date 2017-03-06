@@ -1,3 +1,4 @@
+# worked on by Luke
 import math
 minX = 0
 minY = 0
@@ -63,6 +64,7 @@ for index in range(len(myString)):
     if minY < 0:
         T[1] += math.fabs(minY)
     grid[int(T[0])][int(T[1])] = myString[index]
+#finished by Carter
 inverted_grid = [[grid[y][x] for y in range(len(grid))] for x in range(len(grid[0]))]
 for r in inverted_grid:
     print(''.join(r))

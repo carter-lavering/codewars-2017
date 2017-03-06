@@ -1,3 +1,4 @@
+# made by Josh & Carter
 mylist = []
 numinputs = int(input())
 while numinputs > 0:
