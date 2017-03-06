@@ -1,3 +1,4 @@
+# made by Luke
 class Searcher:
     counter = 0
     grid = []
