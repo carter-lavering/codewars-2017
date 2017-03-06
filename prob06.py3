@@ -1,3 +1,4 @@
+# made by Carter
 for __ in range(int(input())):
     nums = [int(x) for x in input().split()][1:]
     deltas = [nums[i+1]-nums[i] for i in range(len(nums)-1)]
