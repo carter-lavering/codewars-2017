@@ -1,3 +1,4 @@
+# made by Luke
 import math
 for T in range(int(input())):
     X0, A, B, C, M, N, errorVal = [float(v) for v in input().split()]
