@@ -1,1 +1,0 @@
-print("Go Rams Go!")
