@@ -1,33 +1,33 @@
-# made by Luke
-class Searcher:
-    counter = 0
-    grid = []
-    def __init__(self, count, grid):
-        self.counter = count
-        self.grid = grid
-    def search(self, x, y):
-        #end condition
-        if x == len(self.grid[0]) - 1 and y == len(self.grid) - 1:
-            self.counter += 1
-            return
-        #can we go right
-        if (x+1) < len(self.grid[0]):
-            if self.grid[y][x+1] != '#':
-                self.search(x+1, y)
-            else:
-                return
-        if (y+1) < len(self.grid):
-            if self.grid[y+1][x] != '#':
-                self.search(x, y+1)
-    def getCounter(self):
-        return self.counter
+def add_left_and_up(array, x, y):
+    """Set array[y][x] the sum of the cells to the left and above."""
+    if x == y == 0:  # Upper-left corner
+        array[y][x] = 1
+    elif array[y][x] == '#':  # Is "#" (wall and thus no paths)
+        array[y][x] = 0
+    else:
+        # These if statements make sure that if it's 0, it doesn't
+        # accidentally take the last item of the list by indexing -1.
+        if x == 0:
+            left = 0
+        else:
+            left = array[y][x-1]
+        if y == 0:
+            up = 0
+        else:
+            up = array[y-1][x]
+        array[y][x] = left + up
+
+out = []
 while True:
-    x, y = [int(a) for a in input().split()]
-    if x == 0 and y == 0:
+    cols, rows = (int(n) for n in input().split())
+    if cols == rows == 0:  # If input is "0 0"
         break
-    grid = []
-    for __ in range(y):
-        grid.append(list(input()))
-    s = Searcher(0, grid)
-    s.search(0,0)
-    print(s.getCounter())
+    # This takes input rows many times, turns it into a list with each
+    # character as an item (that's what list() does to strings), and sticks all
+    # those into a list.
+    grid = [list(input()) for __ in range(rows)]
+    for y in range(cols):
+        for x in range(rows):
+            add_left_and_up(grid, x, y)
+    out.append(grid[-1][-1])
+print('\n'.join(str(x) for x in out), end='')
