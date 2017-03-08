@@ -5,8 +5,7 @@ def main():
     out = []
     for __ in range(int(input())):
         out.append(valid_pairs(num_row_input(), num_row_input()))
-        print(out[-1])
-    print('\n'.join(out))
+    print('\n'.join(str(x) for x in out))
 
 
 def valid_pairs(tutors, students):
@@ -29,7 +28,6 @@ def valid_pairs(tutors, students):
     pairs = 0
     # For every tutor, add the number of students with scores below them
     for t in tutors:
-        pairs += len(students[:closest_student[t]])
         # print(t, closest_student[t], pairs)
     return pairs
 
