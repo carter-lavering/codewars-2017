@@ -28,7 +28,7 @@ def valid_pairs(tutors, students):
     pairs = 0
     # For every tutor, add the number of students with scores below them
     for t in tutors:
-        # print(t, closest_student[t], pairs)
+        pairs += closest_student[t]
     return pairs
 
 
